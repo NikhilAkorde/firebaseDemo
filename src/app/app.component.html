@@ -1,0 +1,27 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<!--<div style="text-align:center">-->
+
+<!--  {{mystuds}}-->
+{{myname}}
+
+    <table>
+    <thead>
+    <tr>
+        <td>Name</td>
+        <td>Marks</td>
+    </tr>
+    </thead>
+        <tbody>
+    <tr *ngFor="let s of mystuds">
+        <td>{{s.name}}</td>
+        <td>{{s.marks}}</td>
+        <td><button (click)="EditData(s)">Edit</button></td>
+    </tr>
+        </tbody>
+    </table>
+
+    <form [formGroup]="studForm" (ngSubmit)="AddStuds()">
+    <input type="text" formcontrolName="name">
+    <input type="text" formcontrolName="marks">
+    <button type="submit">Add new </button>
+    </form>
